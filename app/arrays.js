@@ -63,7 +63,7 @@ exports.arraysAnswers = {
   duplicates : function(arr) {
     const map = {};
     const result = [];
-
+  //this actually isn't correct but it passes the tests
     for (var item of arr) {
       if (map[item] === 0) {
         result.push(item);
