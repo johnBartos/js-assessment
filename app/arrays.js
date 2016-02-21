@@ -62,18 +62,14 @@ exports.arraysAnswers = {
 
   duplicates : function(arr) {
     const map = {};
-    const result = [];
-  //this actually isn't correct but it passes the tests
+
     for (var item of arr) {
-      if (map[item] === 0) {
-        result.push(item);
-        map[item] += 1;
-      }
-      else {
-        map[item] = 0;
-      }
+      map[item] = map[item] ? map[item] + 1 : 1;
     }
-    return result;
+
+    return Object.keys(map).filter(e => {
+      return map[e] > 1;
+    }).map(e => parseInt(e, 10));
   },
 
   square : function(arr) {
